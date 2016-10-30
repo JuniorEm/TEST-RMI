@@ -1,7 +1,9 @@
-package br.umc.entity;
+package br.umc.dao;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+
+import br.umc.entity.Person;
 
 public interface PersonDAO extends Remote {
 	
@@ -12,6 +14,4 @@ public interface PersonDAO extends Remote {
 	void update(final Person person) throws RemoteException;
 	
 	Person findById(final Long id) throws RemoteException;
-	
-	Person findByName(final String name) throws RemoteException;
 }

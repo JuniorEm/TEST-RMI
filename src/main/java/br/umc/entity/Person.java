@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "PERSON")
+@SuppressWarnings("serial")
 @Entity
 public class Person implements Serializable {
 	
