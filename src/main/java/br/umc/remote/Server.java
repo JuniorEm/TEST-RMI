@@ -8,9 +8,9 @@ import java.rmi.registry.LocateRegistry;
 public class Server {
 	public static void main(String... args) {
 		try {
-			LocateRegistry.createRegistry(1099);
+			LocateRegistry.createRegistry(1023);
 			PersonDAOImpl remote = new PersonDAOImpl();
-			Naming.rebind("person", remote);
+			Naming.rebind("rmi://localhost:1023/person", remote);
 			System.err.println("Server RUNNING ");
 		} catch (final RemoteException | MalformedURLException e) {
 			throw new RuntimeException(e);

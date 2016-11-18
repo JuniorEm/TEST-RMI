@@ -1,5 +1,6 @@
 package br.umc.remote;
 
+import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -7,12 +8,12 @@ import br.umc.dao.GenericDAO;
 import br.umc.dao.PersonDAO;
 import br.umc.entity.Person;
 
-public class PersonDAOImpl implements PersonDAO {
+public class PersonDAOImpl implements PersonDAO, Serializable {
 	
 	private GenericDAO<Person, Long> generic;
 	
 	public PersonDAOImpl() throws RemoteException {
-		UnicastRemoteObject.exportObject(this, 1099);
+		UnicastRemoteObject.exportObject(this, 1023);
 		generic = new GenericDAO<>(Person.class);
 	}
 	

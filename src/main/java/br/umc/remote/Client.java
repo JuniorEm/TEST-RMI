@@ -14,7 +14,7 @@ import br.umc.io.factory.BufferedReaderFactory;
 public class Client {
 	public static void main(String... args) {
 		try {
-			PersonDAO dao = (PersonDAO) Naming.lookup("rmi://127.1.1.1/person");
+			PersonDAO dao = (PersonDAO) Naming.lookup("rmi://08LABS01:1023/person");
 			final BufferedReader br = new BufferedReaderFactory().getBufferedReader();
 			
 	        System.out.println("Insira uma pessoa: ");

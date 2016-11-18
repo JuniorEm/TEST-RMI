@@ -1,11 +1,12 @@
 package br.umc.dao;
 
+import java.io.Serializable;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 import br.umc.entity.Person;
 
-public interface PersonDAO extends Remote {
+public interface PersonDAO extends Remote, Serializable {
 	
 	void add(final Person person) throws RemoteException;
 	
