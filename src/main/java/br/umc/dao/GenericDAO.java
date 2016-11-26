@@ -61,8 +61,16 @@ public class GenericDAO<T, K extends Serializable> {
 				.concat(" WHERE x.id = :id"))
 				.setParameter("id", k)
 				.getSingleResult();
-		
 		return predicate;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<T> obtainAll() {
+		final EntityManager entityManager = getInstance();
+		final List<T> list = 
+				entityManager.createQuery("SELECT x from ".concat(type.getSimpleName()).concat(" x"))
+					.getResultList();
+		return list;
 	}
 	
 	private EntityManager getInstance() {
